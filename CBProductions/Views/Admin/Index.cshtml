@@ -1,0 +1,17 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<partial name="_LoginPartial" />
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <div>
+
+    </div>
+}
+else
+{
+    <h1>Please log in to view the admin console. </h1>
+}

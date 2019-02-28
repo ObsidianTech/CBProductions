@@ -44,7 +44,7 @@ namespace CBProductions
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider sp)
         {
             if (env.IsDevelopment())
             {
@@ -69,6 +69,26 @@ namespace CBProductions
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            CreateAdmin(sp).Wait();
+        }
+
+        public async Task CreateAdmin(IServiceProvider sp)
+        {
+            var UserManager = sp.GetRequiredService<UserManager<IdentityUser>>();
+            var poweruser = new IdentityUser
+            {
+                UserName = Configuration.GetSection("Admin")["Email"],
+                Email = Configuration.GetSection("Admin")["Email"]
+            };
+            string UserPassword = Configuration.GetSection("Admin")["Password"];
+            var user = await UserManager
+                .FindByEmailAsync(Configuration
+                .GetSection("Admin")["Email"]);
+            if (user == null)
+            {
+                var createpoweruser = await UserManager.CreateAsync(poweruser, UserPassword);
+            }
         }
     }
 }
