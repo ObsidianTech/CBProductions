@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.421
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28621.142
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CBProductions", "CBProductions\CBProductions.csproj", "{DC3EE7BE-E58B-497E-91D8-A33AEDBA6451}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CBPVideoAPI", "CBPVideoAPI\CBPVideoAPI.csproj", "{EA9E86F0-4A78-4293-950F-04E949EC29E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CBPVideoAPI", "CBPVideoAPI\CBPVideoAPI.csproj", "{EA9E86F0-4A78-4293-950F-04E949EC29E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -3,15 +3,27 @@
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+
+}
+
 <partial name="_LoginPartial" />
 
 @if (SignInManager.IsSignedIn(User))
 {
-    <div>
+    <div class="AdminContainer">
+        <div class="Console">
+            <div class="consoleButtons">
+                <button id="ListButton">List</button>
+                <button id="AddButton">Add</button>
+            </div>
+            <div id="hook"></div>
 
+        </div>
     </div>
 }
 else
 {
-    <h1>Please log in to view the admin console. </h1>
+    <h1>Please log in to view the admin console.</h1>
 }

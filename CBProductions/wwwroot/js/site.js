@@ -1,4 +1,16 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿$(document).ready(function () {
+    var addButton = document.getElementById("AddButton");
+    var listButton = document.getElementById("ListButton");
+    var hook = document.getElementById("hook");
 
-// Write your JavaScript code.
+    $(addButton).on("click", function () {
+        $.ajax({
+            url: 'AddVideo/',
+            type: 'get',
+            success: function (data) {
+                $(hook).html(data);
+            }
+        });
+    });
+
+});

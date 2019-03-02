@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CBPVideoAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CBPVideoAPI.Controllers
@@ -16,6 +17,12 @@ namespace CBPVideoAPI.Controllers
         public ActionResult<string> Init()
         {
             return "Video API has been initialized successfully. Ready to receive requests.";
+        }
+
+        [HttpPost]
+        public async Task<string> Post (Video video)
+        {
+            return "Upload Successful!";
         }
     }
 }
