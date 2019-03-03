@@ -19,5 +19,10 @@ namespace CBProductions.Controllers
         {
             return PartialView("~/Views/Admin/AddVideo.cshtml");
         }
+
+        public IActionResult AddList()
+        {
+            return PartialView("~/Views/Admin/AddList.cshtml");
+        }
     }
 }
