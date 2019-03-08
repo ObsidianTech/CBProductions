@@ -8,8 +8,8 @@ const app = express();
 
 //configure s3fs
 const s3fsImplementation = new s3fs('nurenbucket', {
-  accessKeyId: 'AKIAI5EFEDJVYMDKKPGA',
-  secretAccessKey: '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'
+  accessKeyId: '',
+  secretAccessKey: ''
 })
 
 //configure app
