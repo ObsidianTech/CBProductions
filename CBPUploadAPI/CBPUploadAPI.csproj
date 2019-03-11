@@ -3,7 +3,6 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <UserSecretsId>cf4fa0da-9099-4fd3-bcc8-0f6a6fd71cbc</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +11,7 @@
 
   <ItemGroup>
     <PackageReference Include="AWSSDK.Core" Version="3.3.32.1" />
+    <PackageReference Include="AWSSDK.S3" Version="3.3.31.23" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.0.2105168" />
