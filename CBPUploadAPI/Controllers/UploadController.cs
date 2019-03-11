@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Amazon.S3;
 using Amazon.S3.Model;
 using System.IO;
+using Microsoft.AspNetCore.Hosting;
 
 namespace CBPUploadAPI.Controllers
 {
@@ -14,20 +15,22 @@ namespace CBPUploadAPI.Controllers
     [ApiController]
     public class UploadController : ControllerBase
     {
-        private static string accessKey = "AKIAJRRS7I4QQIUOBOCQ";
-        private static string secretKey = "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";
-        private static string bucketName = "nurenbucket";
-        private AmazonS3Client s3Client;
+        private IHostingEnvironment _env { get; set; }
 
-        public UploadController()
+        public UploadController(IHostingEnvironment env)
         {
-            s3Client = new AmazonS3Client(accessKey, secretKey, Amazon.RegionEndpoint.USEast2);
+            _env = env;
         }
 
         [HttpPost]
         public async Task<string> Post(IFormFile test)
         {
-            
+            string uploadpath = Path.Combine(_env.ContentRootPath, "Videos");
+            string filename = test.FileName;
+            using (FileStream fs = new FileStream(Path.Combine(uploadpath, filename), FileMode.Create))
+            {
+                await test.CopyToAsync(fs);
+            }
             return ("Upload Successful");
         }
 
