@@ -25,7 +25,7 @@ namespace CBPUploadAPI.Controllers
         [HttpPost]
         public async Task<string> Post(IFormFile test)
         {
-            string uploadpath = Path.Combine(_env.ContentRootPath, "Videos");
+            string uploadpath = Path.Combine(_env.WebRootPath, "vids");
             string filename = test.FileName;
             using (FileStream fs = new FileStream(Path.Combine(uploadpath, filename), FileMode.Create))
             {

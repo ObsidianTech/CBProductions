@@ -39,12 +39,6 @@ namespace CBPUploadAPI
 
             app.UseStaticFiles();
 
-            app.UseStaticFiles(new StaticFileOptions
-            {
-                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "Videos")),
-                RequestPath = "/static"
-            });
-
             app.UseMvc();
         }
     }
