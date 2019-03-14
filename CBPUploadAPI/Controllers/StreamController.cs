@@ -21,7 +21,7 @@ namespace CBPUploadAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public IActionResult Get()
         {
             var filepath = Path.Combine(_env.WebRootPath, "vids", "Ponder.mp3");
             return File(System.IO.File.OpenRead(filepath), "audio/mp3");

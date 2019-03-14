@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Hosting;
 
 namespace CBPUploadAPI.Controllers
 {
+    [DisableRequestSizeLimit]
     [Route("api/[controller]")]
     [ApiController]
     public class UploadController : ControllerBase

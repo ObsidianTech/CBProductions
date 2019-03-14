@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 
 namespace CBPUploadAPI
 {
-    public class Program
+    public static class Program
     {
         public static void Main(string[] args)
         {
@@ -19,6 +19,7 @@ namespace CBPUploadAPI
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseKestrel(o => o.Limits.MaxRequestBodySize = null)
                 .UseStartup<Startup>();
     }
 }
